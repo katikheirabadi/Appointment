@@ -1,8 +1,12 @@
+using Appointment;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.Configure<Config>(builder.Configuration)
+                .AddSingleton(sp => sp.GetRequiredService<IOptions<Config>>().Value);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

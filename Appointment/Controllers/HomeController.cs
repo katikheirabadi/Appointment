@@ -1,42 +1,34 @@
-﻿using Appointment.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Appointment.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //var cookieOptions = new CookieOptions
+        //{
+        //    Expires = DateTimeOffset.UtcNow.AddDays(1),
+        //    HttpOnly = true,
+        //    Secure = true // Set to true if using HTTPS
+        //};
 
-        public HomeController(ILogger<HomeController> logger)
+        //HttpContext.Response.Cookies.Append("UserName", "JohnDoe", cookieOptions);
+        // string userName = Request.Cookies["UserName"]?.ToString();
+        private readonly Config configuration;
+
+        public HomeController(Config configuration)
         {
-            _logger = logger;
+            this.configuration = configuration;
         }
 
         public IActionResult Index()
         {
-            var cookieOptions = new CookieOptions
-            {
-                Expires = DateTimeOffset.UtcNow.AddDays(1),
-                HttpOnly = true,
-                Secure = true // Set to true if using HTTPS
-            };
-
-            HttpContext.Response.Cookies.Append("UserName", "JohnDoe", cookieOptions);
-            return View();
+            return RedirectToAction("Login");
         }
-
-        public IActionResult Privacy()
+        public IActionResult Login()
         {
-            string userName = Request.Cookies["UserName"]?.ToString();
-            ViewBag.UserName = userName;
+            ViewBag.LocalColor = configuration.LocalColor;
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
