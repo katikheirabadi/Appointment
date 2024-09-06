@@ -27,7 +27,10 @@ namespace Appointment.Controllers
         }
         public IActionResult Login()
         {
-            ViewBag.LocalColor = configuration.LocalColor;
+            ViewBag.Color1 = this.configuration.Color1;
+            ViewBag.Color2 = this.configuration.Color2;
+            ViewBag.Color3 = this.configuration.Color3;
+            ViewBag.DarkColor1 = this.configuration.DarkColor1;
             return View();
         }
     }

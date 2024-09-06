@@ -2,26 +2,23 @@
     Layout = "_Layout";
     ViewData["Title"] = "Login";
 }
-<div class="row bg-color" style="height:100vh !important">
-   <div class="col-sm-none col-md-3"></div>
-    <div class="col-sm-12 col-md-9 bg-white d-flex align-content-center justify-content-center ">
-        <form class="align-content-center">
+<div class="row bg-color1" style="height:100vh !important">
 
-        
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="d-none d-md-block col-md-3"></div>
+    <div class="col-sm-12 col-md-9 bg-white d-flex align-content-center justify-content-center">
+        <form class="align-content-center justify-content-center">
+            <div class="d-flex justify-content-center align-items-center">
+                <img  src="~/img/logo.jpg" />
+            </div>
+            <div class="form-group my-4">
+                <label for="userName" class="pb-3 sitecolor">نام کاربری</label>
+                <input class="form-control w-large rounded rounded-pill" id="userName">
+            </div>
+            <div class="form-group my-2">
+                <label for="password" class="pb-3 ">رمز عبور</label>
+                <input type="password" class="form-control w-large rounded rounded-pill" id="password">
+            </div>
+            <button type="submit" class="btn bg-color2 w-100 rounded rounded-pill mt-4 py-2">ورود به حساب کاربری</button>
         </form>
     </div>
 </div>

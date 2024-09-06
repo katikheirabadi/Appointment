@@ -6,9 +6,40 @@
     <title>@ViewData["Title"] - Appointment</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Appointment.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/global.css" asp-append-version="true" />
     <style>
-        .bg-color{
-            background-color: @ViewBag.LocalColor;
+        .w-large {
+            width: 50vh !important
+        }
+
+        .bg-color1 {
+            background-color: @ViewBag.Color1
+        }
+
+        .bg-darck-olor1 {
+            background-color: @ViewBag.DarkColor1
+        }
+
+        .bg-color2 {
+            background-color: @ViewBag.Color2;
+            color:white
+        }
+
+        .bg-color3 {
+            background-color: @ViewBag.Color3;
+            color: white
+        }
+        ///////////////////////////////////////////////////////
+        .color1 {
+            color: @ViewBag.Color1
+        }
+
+        .color2 {
+            color: @ViewBag.Color2
+        }
+
+        .color3 {
+            color: @ViewBag.Color3
         }
     </style>
 </head>
