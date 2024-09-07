@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Appointment</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Appointment.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/global.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/dataTable/dataTables.bootstrap5.css" asp-append-version="true" />
+    <style>
+        .w-large {
+            width: 50vh !important
+        }
+
+        .bg-color1 {
+            background-color: @ViewBag.Color1 !important
+        }
+
+        .bg-dark-color1 {
+            background-color: @ViewBag.DarkColor1 !important
+        }
+
+        .bg-color2 {
+            background-color: @ViewBag.Color2 !important;
+            color: white
+        }
+
+        .bg-color3 {
+            background-color: @ViewBag.Color3 !important;
+            color: white
+        }
+
+        ///////////////////////////////////////////////////////
+        .color1 {
+            color: @ViewBag.Color1 !important
+        }
+
+        .dark-color1 {
+            color: @ViewBag.DarkColor1 !important
+        }
+
+        .color2 {
+            color: @ViewBag.Color2 !important
+        }
+
+        .color3 {
+            color: @ViewBag.Color3 !important
+        }
+
+        .sidebar {
+            height: 100vh;
+        }
+
+        .nav-item {
+            transition: background-color 0.5s ease;
+        }
+
+            .nav-item :hover {
+                background-color: @ViewBag.DarkColor1 !important;
+                color: white !important;
+                opacity: 0.5
+            }
+
+        ul {
+            padding: 0px !important
+        }
+        .info{
+            border-bottom: 3px solid @ViewBag.DarkColor1 !important
+        }
+        .menu{
+            height: 100vh;
+            overflow-y: auto !important;
+            overflow-x:hidden !important;
+            scrollbar-width: none;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 sidebar d-md-block bg-color1">
+                <div class="position-sticky">
+                    <ul class=" flex-column text-center menu">
+                        <li class="mt-4 pb-2 info">
+                            <div class="d-flex justify-content-center">
+                                <img src="/img/logo.jpg" />
+                            </div>
+                            <span class=" pt-2">کتایون خیرآبادی</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">داشبورد</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#"> مدیریت مشتری ها</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت نوبت ها</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت دکتر ها</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت فاکتور ها</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت رویداد ها</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت نقش و دسترسی ها</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت پرداختی ها </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت کاربران </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت طرح های فروش  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت باشگاه های مشتریان  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت گروه های مشتریان  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت جلسات  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت پیامک ها  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="#">مدیریت لاگ ها  </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
