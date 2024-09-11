@@ -9,16 +9,20 @@
     <link rel="stylesheet" href="~/css/global.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/dataTable/dataTables.bootstrap5.css" asp-append-version="true" />
     <style>
+        main{
+            background-color: #f3f3f3;
+        }
         .w-large {
             width: 50vh !important
         }
 
         .bg-color1 {
-            background-color: @ViewBag.Color1 !important
+            background-color: @ViewBag.Color1 !important;
         }
 
         .bg-dark-color1 {
-            background-color: @ViewBag.DarkColor1 !important
+            background-color: @ViewBag.DarkColor1 !important ;
+            color: white !important
         }
 
         .bg-color2 {
@@ -90,20 +94,20 @@
                             <div class="d-flex justify-content-center">
                                 <img src="/img/logo.jpg" />
                             </div>
-                            <span class=" pt-2">کتایون خیرآبادی</span>
+                            <span class=" pt-2">@ViewBag.UserName</span>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link dark-color1" href="#">داشبورد</a>
+                            <a class="nav-link dark-color1" href="@Url.Action("Dashboard","Panel")">داشبورد</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-color1" href="@Url.Action("Users","Panel")">مدیریت کاربران</a>
+                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link dark-color1" href="#"> مدیریت مشتری ها</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link dark-color1" href="#">مدیریت نوبت ها</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link dark-color1" href="#">مدیریت دکتر ها</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link dark-color1" href="#">مدیریت فاکتور ها</a>
                         </li>
